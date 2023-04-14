@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}
+Wonam | Page
+{% endblock title %}
+
+
+
+{% block conatant %}
+        <!-- Section-->
+        <h1>This is woman page to display</h1>
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+
+
+                    <!-- use for loop to display the images -->
+        {% for img in images %}
+                        
+        <div class="col mb-5">
+            <div class="card h-100">
+                <!-- Product image-->
+                <!-- <h1> </h1> -->
+                <img class="card-img-top" src="/static/{{img['pic_name']}}" alt="..." />
+                <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{img['item_name']}}</h5>
+                                    <!-- Product price-->
+                                    {{img['price']}} RS
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                            </div>
+                        </div>                        
+                    </div>
+                    
+            {% endfor %}
+                <!-- Ending of for loop -->
+
+
+                </div>
+            </div>
+            </section>
+
+
+            <div class="container">
+                <h1>This image form database</h1>
+                {% for images in data %}
+                 <div class="card" id = "element1">
+                <img id="picture"  src="data:image/png;base64,{{ image_data}}" alt="Avatar" style="width:100%; border: 2px solid red; max-height: 60vh;">
+                 </div>
+                 {% endfor %}
+            </div>
+{% endblock conatant %}
+
+

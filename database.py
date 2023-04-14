@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, text
 import os
 import mysql.connector
 
-bd = "mysql+pymysql://lkwp097ctrdqyazqlzcq:pscale_pw_LtMfaJT1s4JfNPi5Q9ck6s2VAqYa8cRbNMsyY4C0x13@aws.connect.psdb.cloud/first-data-base?charset=utf8mb4"
+bd = "mysql+pymysql://m3kexk5jjvls7yx9sbsu:pscale_pw_CgLSA1zzfSn9AenteHKDozRRjzjYJRstH1Dn4oOfA01@aws.connect.psdb.cloud/first-data-base?charset=utf8mb4"
 engine = create_engine(
   bd , connect_args={
     "ssl":{
@@ -19,6 +19,17 @@ def log_in_from_db():
       log_in.append(row)
     return log_in
 
+
+def add_man_data_from_db():
+  with engine.connect() as conn:
+    result = conn.execute(text("select * from add_man"))
+    return result
+  
+  
+def add_woman_data_from_db():
+  with engine.connect() as conn:
+    result = conn.execute(text("select * from add_woman"))
+    return result
   
 def add_sign_table_to_db(data):
     with engine.connect() as conn:

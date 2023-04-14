@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template,  flash, redirect
-from database import log_in_from_db, add_sign_table_to_db
+from database import log_in_from_db
+from database import add_man_data_from_db  , add_woman_data_from_db
 from database import engine, text
 import os
 from datetime import datetime
@@ -70,7 +71,7 @@ def man_page():
         ext = split_filename[ext_pos]
         db_path = str(f"uploads/add_man/{new_filename}.{ext}")
         print("The type of path  = ", type(db_path))
-        file.save(f"uploads/add_man/{new_filename}.{ext}")
+        file.save(f"static/uploads/add_man/{new_filename}.{ext}")
 
         print("File uploaded successfully")
         print(request.form.get('name'), request.form.get("price"))
@@ -102,7 +103,7 @@ def woman_page():
         ext = split_filename[ext_pos]
         db_path = str(f"uploads/add_woman/{new_filename}.{ext}")
         print("The type of path  = ", type(db_path))
-        file.save(f"uploads/add_woman/{new_filename}.{ext}")
+        file.save(f"static/uploads/add_woman/{new_filename}.{ext}")
 
         print("File uploaded successfully")
         print(request.form.get('name'), request.form.get("price"))
@@ -118,6 +119,33 @@ def woman_page():
     else:
         print("Error: No file uploaded")
     return render_template("add_woman.html")
+
+
+# def add_man_data_from_db():
+#   with engine.connect() as conn:
+#     result = conn.execute(text("select * from add_man"))
+#     log_in = []
+#     for row in result.all():
+#       log_in.append(row)
+#     return log_in
+
+
+@app.route("/man-page" , methods=["GET", "POST"])
+def man():
+    print("its work")
+    data = add_man_data_from_db()
+    print("This is data")
+    print(data)
+    return render_template("man.html" , images = data)
+
+
+@app.route("/woman-page" , methods=["GET", "POST"])
+def woman():
+    print("its work")
+    data = add_woman_data_from_db()
+    print("This is data")
+    print(data)
+    return render_template("woman.html" , images = data)
 
 
 if __name__ == '__main__':
