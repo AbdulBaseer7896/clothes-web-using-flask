@@ -1,0 +1,33 @@
+{% extends 'admin_base.html' %}
+{% block title %}
+
+Add Men
+{% endblock title %}
+
+
+
+{% block conatant %}
+
+<h1>This Man database page</h1>
+
+<form class="container" action="{{ url_for('man_page') }}"  method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name of Product</label>
+      <input name="name"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Description of product</label>
+      <input name="description" type="text" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Price of the product</label>
+        <input name="price" type="number" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="input-group mb-3">
+        <input type="file" name="image"  class="form-control" id="inputGroupFile02"  autocomplete="" required>
+      </div>
+
+    <input type="submit"  class="btn btn-primary"></input>
+  </form>
+<br>
+{% endblock conatant %}

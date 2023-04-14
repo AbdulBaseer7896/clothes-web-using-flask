@@ -1,0 +1,9 @@
+.d-flex a:active, a:visited, a:link{
+    text-decoration: none;
+    color: #212529;
+}
+
+.d-flex a:hover{
+    text-decoration: none;
+    color: white;
+}
