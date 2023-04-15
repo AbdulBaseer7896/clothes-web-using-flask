@@ -1,0 +1,85 @@
+
+{% extends 'base.html' %}
+{% block title %}
+Buy | Now
+{% endblock title %}
+
+
+{% block conatant %}
+
+<div class=" container" >
+
+
+{{number}}
+
+    
+    <h1>If you want to buy this Product then Kindly Log IN</h1>
+
+    <h1 class="container">Kindly Sign in</h1>
+    <div class="container">
+    <form  action="{{ url_for('buy') }}" method="post">
+        <div class="col-md-6">
+            <label for="name" class="form-label">Full Name</label>
+            <input name="name" type="text" class="form-control" id="name">
+          </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="abc@gmail.com">
+        </div>
+        <div class="col-md-6">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input name="phone" type="number" class="form-control" id="phone" placeholder="03XX-XXXXXXX">
+          </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input name="password" type="password" class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input name="address1" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress2" class="form-label">Address 2</label>
+          <input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input name="city" type="text" class="form-control" id="inputCity">
+        </div>
+        <br>
+        <div class="col-12">
+          <input type="submit" class="btn btn-primary"></input>
+        </div>
+      </form>
+    </div>
+      <br>
+</div>
+
+
+        <div class="col mb-5">
+            <div class="card h-100">
+                <!-- Product image-->
+                <!-- <h1> </h1> -->
+                <img class="card-img-top" src="/static/{{img['pic_name']}}" alt="..." />
+                <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{img['item_name']}}</h5>
+                                    <!-- Product price-->
+                                    {{img['price']}} RS
+                                </div>
+                            </div>   
+        
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ url_for('buy', number = img.pic_name )}}">Order Now</a>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+
+<br>
+
+{% endblock conatant %}     
