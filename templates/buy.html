@@ -20,14 +20,16 @@ Buy | Now
             <div class="card h-100">
               <!-- Product image-->
               <!-- <h1> </h1> -->
-              <img class="card-img-top" src="/static/{{number}}" alt="..." />
+              <h1>This is number</h1>
+              {{num}}
+              <img class="card-img-top" src="/static/{{num.pic_name}}" alt="..." />
               <!-- Product details-->
               <div class="card-body p-4">
                 <div class="text-center">
                   <!-- Product name-->
-                  <h5 class="fw-bolder">Just for man</h5>
+                  <h5 class="fw-bolder">{{num['item_name']}}</h5>
                   <!-- Product price-->
-                  30000 RS
+                  {{num['price']}}
                 </div>
               </div>
               <!-- Product actions-->

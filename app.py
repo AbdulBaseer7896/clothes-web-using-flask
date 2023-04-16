@@ -151,9 +151,11 @@ def woman():
 
 @app.route("/buy" , methods=["GET", "POST"] )
 def buy():
-    number = str(request.args.get('number'))
-    print(number)
-    return render_template('buy.html' , number = number)
+    num = request.args.get('num')
+    # data = request.args.get('data')
+    # print(data)
+    print("This si number " , num)
+    return render_template('buy.html' , num = num)
 
 
 @app.route('/order' ,methods=["GET", "POST"]  )
