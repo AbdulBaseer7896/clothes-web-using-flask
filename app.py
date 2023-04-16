@@ -148,5 +148,12 @@ def woman():
     return render_template("woman.html" , images = data)
 
 
+@app.route("/buy" , methods=["GET", "POST"] )
+def buy():
+    number = str(request.args.get('number'))
+    print(number)
+    return render_template('buy.html' , number = number)
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
