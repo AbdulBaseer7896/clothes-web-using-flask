@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% block title %}
 Buy | Now
@@ -7,79 +6,105 @@ Buy | Now
 
 {% block conatant %}
 
-<div class=" container" >
+<div class=" container">
 
 
-{{number}}
+  {{number}}
 
-    
-    <h1>If you want to buy this Product then Kindly Log IN</h1>
+  <div>
+    <section class="py-5">
+      <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-    <h1 class="container">Kindly Sign in</h1>
-    <div class="container">
-    <form  action="{{ url_for('buy') }}" method="post">
-        <div class="col-md-6">
-            <label for="name" class="form-label">Full Name</label>
-            <input name="name" type="text" class="form-control" id="name">
+          <div class="col mb-5">
+            <div class="card h-100">
+              <!-- Product image-->
+              <!-- <h1> </h1> -->
+              <img class="card-img-top" src="/static/{{number}}" alt="..." />
+              <!-- Product details-->
+              <div class="card-body p-4">
+                <div class="text-center">
+                  <!-- Product name-->
+                  <h5 class="fw-bolder">Just for man</h5>
+                  <!-- Product price-->
+                  30000 RS
+                </div>
+              </div>
+              <!-- Product actions-->
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <h1>If you want to buy this Product then Kindly Log IN</h1>
+
+  <div class="container">
+    <div class="row align-items-start">
+      <div class="col">
+      <form action="{{ url_for('order') }}" method="post">
+        <div class="col-md-6">
+          <label for="name" class="form-label">Full Name</label>
+          <input name="name" type="text" class="form-control" id="name">
+        </div>
         <div class="col-md-6">
           <label for="inputEmail4" class="form-label">Email</label>
           <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="abc@gmail.com">
         </div>
         <div class="col-md-6">
-            <label for="phone" class="form-label">Phone Number</label>
-            <input name="phone" type="number" class="form-control" id="phone" placeholder="03XX-XXXXXXX">
-          </div>
+          <label for="phone" class="form-label">Phone Number</label>
+          <input name="phone" type="number" class="form-control" id="phone" placeholder="03XX-XXXXXXX">
+        </div>
         <div class="col-md-6">
           <label for="inputPassword4" class="form-label">Password</label>
           <input name="password" type="password" class="form-control" id="inputPassword4">
         </div>
-        <div class="col-12">
-          <label for="inputAddress" class="form-label">Address</label>
+        <div class="col-6">
+          <label for="inputAddress" class="form-label">Address 1</label>
           <input name="address1" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
         </div>
-        <div class="col-12">
+        <div class="col-6">
           <label for="inputAddress2" class="form-label">Address 2</label>
-          <input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          <input name="address2" type="text" class="form-control" id="inputAddress2"
+            placeholder="Apartment, studio, or floor">
         </div>
         <div class="col-md-6">
           <label for="inputCity" class="form-label">City</label>
           <input name="city" type="text" class="form-control" id="inputCity">
         </div>
+
+        <div class="col-md-6">
+          <label for="province" class="form-label">Province</label>
+          <input name="province" type="text" class="form-control" id="province">
+        </div>
+        <div class="col-md-6">
+          <label for="country" class="form-label">Country</label>
+          <input name="country" type="text" class="form-control" id="country">
+        </div>
+        <div class="col-md-6">
+          <label style="display: none;" for="order_number" class="form-label">Order Number</label>
+          <input style="display: none;" name="pic_name" type="text" class="form-control" id="order_number"value="{{number}}" >
+        </div>
         <br>
         <div class="col-12">
           <input type="submit" class="btn btn-primary"></input>
         </div>
+        <div class="col-md-6">
       </form>
     </div>
-      <br>
+
+    <div class="col">
+      THis is testing
+    </div>
+    </div>
+  </div>
+  <br>
 </div>
 
 
-        <div class="col mb-5">
-            <div class="card h-100">
-                <!-- Product image-->
-                <!-- <h1> </h1> -->
-                <img class="card-img-top" src="/static/{{img['pic_name']}}" alt="..." />
-                <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">{{img['item_name']}}</h5>
-                                    <!-- Product price-->
-                                    {{img['price']}} RS
-                                </div>
-                            </div>   
-        
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ url_for('buy', number = img.pic_name )}}">Order Now</a>
-                                </div>
-                            </div>
-                        </div>                        
-                    </div>
+
 
 <br>
 
-{% endblock conatant %}     
+{% endblock conatant %}

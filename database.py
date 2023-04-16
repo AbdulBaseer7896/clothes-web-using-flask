@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, text
 import os
 import mysql.connector
 
-bd = "mysql+pymysql://tw4zk2o86o7a059uhafn:pscale_pw_ve2UB77cpuL1ynX74pnbEWZhT0EFkdvoztTHNq3s2K2@aws.connect.psdb.cloud/first-data-base?charset=utf8mb4"
+bd = "mysql+pymysql://z7gmfk4mjvtwhiuiutad:pscale_pw_GZrdYCfZT7qkvCFm8mmxHf59dmOOSBU5lLwc7WUDCH7@aws.connect.psdb.cloud/first-data-base?charset=utf8mb4"
 engine = create_engine(
   bd , connect_args={
     "ssl":{
@@ -24,6 +24,13 @@ def add_man_data_from_db():
   with engine.connect() as conn:
     result = conn.execute(text("select * from add_man"))
     return result
+
+
+def order_details_from_db():
+  with engine.connect() as conn:
+    result = conn.execute(text("select * from orders"))
+    return result  
+  
   
   
 def add_woman_data_from_db():

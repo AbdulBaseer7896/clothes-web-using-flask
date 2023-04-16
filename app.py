@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template,  flash, redirect
 from database import log_in_from_db
-from database import add_man_data_from_db  , add_woman_data_from_db
+from database import add_man_data_from_db  , add_woman_data_from_db , order_details_from_db
 from database import engine, text
 import os
 from datetime import datetime
@@ -42,9 +42,10 @@ def log_page():
         log = log_in_from_db()
         print("THis is code ")
         print(log)
+        data = order_details_from_db()
         for code in log:
             if email == "abdulbasirqazi@gmail.com" and password == 12345:
-                return render_template("admin.html")
+                return render_template("admin.html" , data = data)
 
             if email == code[0] and password == code[1]:
                 print(code[0], code[1])
@@ -153,6 +154,25 @@ def buy():
     number = str(request.args.get('number'))
     print(number)
     return render_template('buy.html' , number = number)
+
+
+@app.route('/order' ,methods=["GET", "POST"]  )
+def order():
+    print("this is order_page")
+    if request.method == "POST":
+        with engine.connect() as conn:
+            query = text(
+                "INSERT INTO orders (name ,email,phone_num,password,address1,address2,city,province,country,image_name) VALUES (:name , :email, :phone_num, :password, :address1, :address2, :city, :province, :country, :image_name)")
+            if(request.form.get('name') == "" or request.form.get("phone") == "" or request.form.get("address1") == "" ):
+                return render_template('buy.html')
+            else:
+                conn.execute(query, {"name": request.form.get('name'), "email": request.form.get("email"), "phone_num": request.form.get("phone"), "password": request.form.get("password"), "address1": request.form.get("address1") , "address1": request.form.get("address1") , "address2": request.form.get("address2") , "city": request.form.get("city") , "province": request.form.get("province"), "country": request.form.get("country") ,  "image_name": request.form.get("pic_name")})
+
+            
+            print("value is inserted in database")
+            return render_template("index.html")
+    return render_template("buy.html")
+
 
 
 if __name__ == '__main__':
