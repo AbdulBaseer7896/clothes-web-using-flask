@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, text
 import os
 import mysql.connector
 
-bd = "mysql+pymysql://tvhpx6kyryxtb3apfu6l:pscale_pw_qt1YSTQBWx3X5fR9S39tFkdrjC5nALZ4Gd1ihEt3AoI@aws.connect.psdb.cloud/first-data-base?charset=utf8mb4"
+bd = "mysql+pymysql://metid1dda2cgidiyhrvn:pscale_pw_DAxJxj9tgNnwb3w61xioeWtjA28fsTtbWwBGyHxtJuM@aws.connect.psdb.cloud/first-data-base?charset=utf8mb4"
 engine = create_engine(
   bd , connect_args={
     "ssl":{
