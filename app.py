@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template,  flash, redirect
 from database import log_in_from_db
-from database import add_man_data_from_db  , add_woman_data_from_db , order_details_from_db
+from database import add_man_data_from_db  , add_woman_data_from_db , delete_woman_product_form_db_and_file, order_details_from_db ,delete_man_product_form_db_and_file
+
 from database import engine, text
 import os
 from datetime import datetime
@@ -60,6 +61,7 @@ def admin_page():
 
 @app.route("/Add_man", methods=["GET", "POST"])
 def man_page():
+    data = add_man_data_from_db()
     file = request.files.get('avatar')
     if file is not None:
         new_filename = str(datetime.now().timestamp()).replace(
@@ -87,11 +89,13 @@ def man_page():
                 print("Data inserted successfully")
     else:
         print("Error: No file uploaded")
-    return render_template("add_man.html")
+    return render_template("add_man.html" , data = data)
 
 
 @app.route("/Add_woman", methods=["GET", "POST"] )
 def woman_page():
+    data = add_woman_data_from_db()
+    print("This is woman data" )
     file = request.files.get('avatar')
     if file is not None:
         new_filename = str(datetime.now().timestamp()).replace(
@@ -119,7 +123,7 @@ def woman_page():
                 print("Data inserted successfully")
     else:
         print("Error: No file uploaded")
-    return render_template("add_woman.html")
+    return render_template("add_woman.html" , data = data)
 
 
 # def add_man_data_from_db():
@@ -175,6 +179,23 @@ def order():
             return render_template("index.html")
     return render_template("buy.html")
 
+
+
+@app.route('/delete_products_from_woman' ,methods=["GET", "POST" , "DELETE"]  )
+def delete_product_woman():
+    path = request.args.get('path')
+    delete_woman_product_form_db_and_file(path)
+    datas = add_woman_data_from_db()
+    return render_template('add_woman.html' ,data = datas)
+
+
+
+@app.route('/delete_products_from_man' ,methods=["GET", "POST" , "DELETE"]  )
+def delete_product_man():
+    path = request.args.get('path')
+    delete_man_product_form_db_and_file(path)
+    datas = add_man_data_from_db()
+    return render_template('add_man.html' ,data = datas)
 
 
 if __name__ == '__main__':

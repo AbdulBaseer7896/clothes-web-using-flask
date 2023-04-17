@@ -10,24 +10,70 @@ Add Men
 
 <h1>This Man database page</h1>
 
-<form class="container" action="{{ url_for('man_page') }}"  method="post" enctype="multipart/form-data">
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Name of Product</label>
-      <input name="name"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Description of product</label>
-      <input name="description" type="text" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Price of the product</label>
-        <input name="price" type="number" class="form-control" id="exampleInputPassword1">
+<form class="container" action="{{ url_for('man_page') }}" method="post" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name of Product</label>
+    <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Description of product</label>
+    <input name="description" type="text" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Price of the product</label>
+    <input name="price" type="number" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="input-group mb-3">
+    <input type="file" name="avatar" class="form-control" id="inputGroupFile02">
+  </div>
+
+  <input type="submit" class="btn btn-primary"></input>
+</form>
+<br>
+
+<hr>
+
+<div class="container">
+  <h1>All The product related to man page</h1>
+  <div class="border-bottom row" style="margin-bottom:16px;padding-bottom:8px;">
+    <hr>
+    {% for data in data %}
+    <div class="col-10">
+      <h4 style="color:rgb(120,120,120); margin-bottom:4px;">
+      </h4>
+      <br>
+      <div>
+        <b>Product Name:</b> = {{data['item_name']}}
       </div>
-      <div class="input-group mb-3">
-        <input type="file" name="avatar"  class="form-control" id="inputGroupFile02">
+      
+      <div>
+        <b>Product Price:</b> = <b>{{data['price']}} RS</b>
+      </div>
+      
+      <div>
+        <b>Product Description:</b> = {{data['descp']}}
+      </div>
+      <br>
+      <div>
+        <a href="{{ url_for('delete_product_man' , path = data.pic_name ) }}" type="submit"
+          class="btn btn-primary">Delete</a>
       </div>
 
-    <input type="submit"  class="btn btn-primary"></input>
-  </form>
-<br>
+    </div>
+    <div class="col-2 padding-right:16px">
+      <img style="width: 200px; height: 200px;" src="/static/{{data['pic_name']}}" alt="image">
+    </div>
+
+    <hr>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+
+
+
+
+
 {% endblock conatant %}

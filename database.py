@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, text
 import os
 import mysql.connector
 
-bd = "mysql+pymysql://99v448guxdjqzz2f7d0y:pscale_pw_anM5IcEQveqU3y7bLlREzNygDefdUNS9oPPpITHsWCY@aws.connect.psdb.cloud/first-data-base?charset=utf8mb4"
+bd = "mysql+pymysql://qyljru6f4r3tqiqhccup:pscale_pw_Y13nAK5P1V1Vqxj1Cby0hf7sxqNnKpvWk5c7uqbv7F3@aws.connect.psdb.cloud/first-data-base?charset=utf8mb4"
 engine = create_engine(
   bd , connect_args={
     "ssl":{
@@ -24,6 +24,12 @@ def add_man_data_from_db():
   with engine.connect() as conn:
     result = conn.execute(text("select * from add_man"))
     return result
+  
+
+def add_woman_data_from_db():
+  with engine.connect() as conn:
+    result = conn.execute(text(f"select * from add_woman"))
+    return result
 
 
 def order_details_from_db():
@@ -31,12 +37,27 @@ def order_details_from_db():
     result = conn.execute(text("select * from orders"))
     return result  
   
+   
   
   
-def add_woman_data_from_db():
-  with engine.connect() as conn:
-    result = conn.execute(text("select * from add_woman"))
+def delete_woman_product_form_db_and_file(path):
+    with engine.connect() as conn:
+        query = text("DELETE FROM add_woman WHERE pic_name = :path")
+        values = {'path': path}
+        result = conn.execute(query, values)
+    os.remove(f"static/{path}")
     return result
+  
+  
+def delete_man_product_form_db_and_file(path):
+    with engine.connect() as conn:
+        query = text("DELETE FROM add_man WHERE pic_name = :path")
+        values = {'path': path}
+        result = conn.execute(query, values)
+    os.remove(f"static/{path}")
+    return result
+  
+  
   
 def add_sign_table_to_db(data):
     with engine.connect() as conn:

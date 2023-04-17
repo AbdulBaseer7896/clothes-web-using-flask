@@ -28,4 +28,43 @@ Add Woman
     <input type="submit"  class="btn btn-primary"></input>
   </form>
 <br>
+
+<hr>
+<h1>All The product related to woman_page</h1>
+
+
+<div class="container">
+  {% for data in data %}
+    
+  <div class="border-bottom row" style="margin-bottom:16px;padding-bottom:8px;">
+    <div class="col-10">
+      <h4 
+      style="color:rgb(120,120,120); margin-bottom:4px;">
+    </h4>
+    <br>
+    <div>
+      <b>Product Name:</b> = {{data['item_name']}}
+    </div>
+
+    <div>
+      <b>Product Price:</b> = <b>{{data['price']}} RS</b>
+    </div>
+    
+    <div>
+      <b>Product Description:</b> = {{data['descp']}}
+    </div>
+    <br>
+    <div> 
+      <a href="{{ url_for('delete_product_woman' , path = data.pic_name ) }}" type="submit" class="btn btn-primary">Delete</a>
+    </div>
+    
+    
+  </div>
+  <div class="col-2 padding-right:16px">
+    <img style="width: 200px; height: 200px;" src="/static/{{data['pic_name']}}" alt="image">
+  </div>
+</div>
+  {% endfor %}
+
+</div>
 {% endblock conatant %}
