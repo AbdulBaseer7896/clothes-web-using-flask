@@ -126,13 +126,9 @@ def woman_page():
     return render_template("add_woman.html" , data = data)
 
 
-# def add_man_data_from_db():
-#   with engine.connect() as conn:
-#     result = conn.execute(text("select * from add_man"))
-#     log_in = []
-#     for row in result.all():
-#       log_in.append(row)
-#     return log_in
+app.route("/conformed_order")
+def conformed_order():
+    return render_template('order_conform.html')
 
 
 @app.route("/man-page" , methods=["GET", "POST"])
@@ -176,7 +172,7 @@ def order():
 
             
             print("value is inserted in database")
-            return render_template("index.html")
+            return render_template("order_conform.html")
     return render_template("buy.html")
 
 
