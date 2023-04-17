@@ -8,9 +8,6 @@ Buy | Now
 
 <div class=" container">
 
-
-  {{number}}
-
   <div>
     <section class="py-5">
       <div class="container px-4 px-lg-5 mt-5">
@@ -20,16 +17,14 @@ Buy | Now
             <div class="card h-100">
               <!-- Product image-->
               <!-- <h1> </h1> -->
-              <h1>This is number</h1>
-              {{num}}
-              <img class="card-img-top" src="/static/{{num.pic_name}}" alt="..." />
+              <img class="card-img-top" src="/static/{{data[2]}}" alt="..." />
               <!-- Product details-->
               <div class="card-body p-4">
                 <div class="text-center">
                   <!-- Product name-->
-                  <h5 class="fw-bolder">{{num['item_name']}}</h5>
+                  <h5 class="fw-bolder">{{data[1]}}</h5>
                   <!-- Product price-->
-                  {{num['price']}}
+                  {{data[0]}}
                 </div>
               </div>
               <!-- Product actions-->
@@ -52,7 +47,7 @@ Buy | Now
         </div>
         <div class="col-md-6">
           <label for="inputEmail4" class="form-label">Email</label>
-          <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="abc@gmail.com">
+          <input name="Email" type="email" class="form-control" id="inputEmail4" placeholder="abc@gmail.com">
         </div>
         <div class="col-md-6">
           <label for="phone" class="form-label">Phone Number</label>
@@ -84,9 +79,21 @@ Buy | Now
           <label for="country" class="form-label">Country</label>
           <input name="country" type="text" class="form-control" id="country">
         </div>
+
+        <!-- These are not for display -->
         <div class="col-md-6">
           <label style="display: none;" for="order_number" class="form-label">Order Number</label>
-          <input style="display: none;" name="pic_name" type="text" class="form-control" id="order_number"value="{{number}}" >
+          <input style="display: none;" name="item_path" type="text" class="form-control" id="order_number" value={{data[2]}} >
+        </div>
+
+        <div class="col-md-6">
+          <label style="display: none;" for="item_name" class="form-label">Name of Order</label>
+          <input style="display: none;" name="item_name" type="text" class="form-control" id="item_name" value={{data[1]}} >
+        </div>
+
+        <div class="col-md-6">
+          <label style="display: none;" for="price" class="form-label">Price of Order</label>
+          <input style="display: none;" name="price" type="text" class="form-control" id="price" value={{data[0]}} >
         </div>
         <br>
         <div class="col-12">

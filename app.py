@@ -151,11 +151,11 @@ def woman():
 
 @app.route("/buy" , methods=["GET", "POST"] )
 def buy():
-    num = request.args.get('num')
-    # data = request.args.get('data')
-    # print(data)
-    print("This si number " , num)
-    return render_template('buy.html' , num = num)
+    price = request.args.get('price')
+    item_name = request.args.get('item_name')
+    path = request.args.get('path')
+    data = [price , item_name , path]
+    return render_template('buy.html' , data = data )
 
 
 @app.route('/order' ,methods=["GET", "POST"]  )
@@ -164,11 +164,11 @@ def order():
     if request.method == "POST":
         with engine.connect() as conn:
             query = text(
-                "INSERT INTO orders (name ,email,phone_num,password,address1,address2,city,province,country,image_name) VALUES (:name , :email, :phone_num, :password, :address1, :address2, :city, :province, :country, :image_name)")
+                "INSERT INTO orders (name ,email,phone_num,password,address1,address2,city,province,country,image_name , image_price,image_path ) VALUES (:name , :email, :phone_num, :password, :address1, :address2, :city, :province, :country, :image_name , :image_price , :image_path)")
             if(request.form.get('name') == "" or request.form.get("phone") == "" or request.form.get("address1") == "" ):
                 return render_template('buy.html')
             else:
-                conn.execute(query, {"name": request.form.get('name'), "email": request.form.get("email"), "phone_num": request.form.get("phone"), "password": request.form.get("password"), "address1": request.form.get("address1") , "address1": request.form.get("address1") , "address2": request.form.get("address2") , "city": request.form.get("city") , "province": request.form.get("province"), "country": request.form.get("country") ,  "image_name": request.form.get("pic_name")})
+                conn.execute(query, {"name": request.form.get('name'), "email": request.form.get("email"), "phone_num": request.form.get("phone"), "password": request.form.get("password"), "address1": request.form.get("address1") , "address2": request.form.get("address2") ,"city": request.form.get("city") , "province": request.form.get("province"), "country": request.form.get("country") ,  "image_name": request.form.get("item_name") ,  "image_price": request.form.get("price") ,  "image_path": request.form.get("item_path")})
 
             
             print("value is inserted in database")

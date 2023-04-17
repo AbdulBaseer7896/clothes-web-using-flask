@@ -33,7 +33,7 @@ Wonam | Page
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ url_for('buy', item_name = img.item_name , price = img.price , path = img.pic_name)}}">Order Now</a></div>
                             </div>
                         </div>                        
                     </div>

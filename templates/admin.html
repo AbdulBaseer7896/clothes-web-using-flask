@@ -39,10 +39,21 @@ Admin page
         <b>City Name:</b> = {{order['city']}}
     </div>
 
+    <div>
+        <b>Province:</b> = {{order['province']}} / {{order['country']}}
+    </div>
+    <div>
+        <b>Product Name:</b> = {{order['image_name']}}
+    </div>
+    <div>
+        <b>Product Price:</b> = <b>{{order['image_price']}} RS</b>
+    </div>
+
+
 
 </div>
 <div class="col-2 padding-right:16px">
-    <img style="width: 200px; height: 200px;" src="/static/{{order['image_name']}}" alt="image">
+    <img style="width: 200px; height: 200px;" src="/static/{{order['image_path']}}" alt="image">
 </div>
 
 </div>
