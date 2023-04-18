@@ -194,5 +194,6 @@ def delete_product_man():
     return render_template('add_man.html' ,data = datas)
 
 
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
