@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, text
 import os
 import mysql.connector
 
-nothing = "mysql+pymysql://ygu021mtlmf2knl3weo8:pscale_pw_PuB68RI0UMOfKNQQbteDDEUS8ZG1wAdZerOjLupLAb9@aws.connect.psdb.cloud/first-data-base?charset=utf8mb4"
+nothing = os.environ.get('db_connection')
 
 bd = nothing
 engine = create_engine(
