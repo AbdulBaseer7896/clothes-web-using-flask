@@ -2,11 +2,9 @@ from sqlalchemy import create_engine, text
 import os
 import mysql.connector
 
-nothing = os.environ.get('db_connection')
 
-bd = nothing
-engine = create_engine(
-  bd , connect_args={
+db_connection = os.environ.get('db_connection')
+engine = create_engine(db_connection, connect_args={
     "ssl":{
       "ssl_ca":"/etc/ssl/cert.pem"
     }
