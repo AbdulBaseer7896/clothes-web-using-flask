@@ -22,9 +22,9 @@ Buy | Now
               <div class="card-body p-4">
                 <div class="text-center">
                   <!-- Product name-->
-                  <h5 class="fw-bolder">{{data[1]}}</h5>
+                  <h5 class="fw-bolder"><h2>{{data[1]}}</h2></h5>
                   <!-- Product price-->
-                  {{data[0]}}
+                  <h1><b>{{data[0]}}</b></h1>
                 </div>
               </div>
               <!-- Product actions-->
@@ -35,11 +35,15 @@ Buy | Now
     </section>
   </div>
 
-  <h1>If you want to buy this Product then Kindly Log IN</h1>
+  <h1 style="text-align: center;">If you want to buy a Product then Kindly Log 
+    IN</h1>
+    <br>
+    <hr>
+    <br>
 
   <div class="container">
     <div class="row align-items-start">
-      <div class="col">
+      <div class="col big-font" >
       <form action="{{ url_for('order') }}" method="post">
         <div class="col-md-6">
           <label for="name" class="form-label">Full Name</label>
@@ -96,15 +100,11 @@ Buy | Now
           <input style="display: none;" name="price" type="text" class="form-control" id="price" value={{data[0]}} >
         </div>
         <br>
-        <div class="col-12">
+        <div style="text-align: center;" class="col-12">
           <input type="submit" class="btn btn-primary">
         </div>
         <div class="col-md-6">
       </form>
-    </div>
-
-    <div class="col">
-      THis is testing
     </div>
     </div>
   </div>

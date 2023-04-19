@@ -3,6 +3,7 @@
     --seondcolor:#dbdbe2;
 }
 
+
 *{
     margin: 0;
     padding: 0;
@@ -36,7 +37,7 @@ html{
 .navbar a{
     color: black;
     font-size: 1.7rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
 }
 .navbar a:hover{
     background-color: var(--maincolor);
@@ -142,6 +143,11 @@ html{
 font-size: 50px;
 letter-spacing: 3px;
 }
+.left-content h1{
+    font-size: 7.5rem;
+    letter-spacing: 3px;
+    }
+
 .left-inner{
     display: flex;
     justify-content: center;
@@ -330,15 +336,32 @@ letter-spacing: 3px;
 
 
 
+.btn-primary-for-main {
+    text-align: center;
+    color: #fff;
+    background: #16a083;
+    display: inline-block;
+    padding: .7em 1.9em;
+    text-decoration: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-size: large;
+    font-weight: 500;
+}
 
+.btn-primary-for-main:hover{
+    background: #fff;
+    color: #16a083;
+    /* font-size: 1.1rem; */
+    border: 3px solid #16a083;
+}
 
-
-
-
-
-
-
-
+.no-needed{
+    display: none;
+}
 
 
 
@@ -363,14 +386,14 @@ letter-spacing: 3px;
         top: 100%;
         width: 50rem;
         background: var(--maincolor);
-        height: 100vh;
+        height: 50vh;
         left:100%;
     }
     .navbar a{
         display: block;
         color: white;
         background: black;
-        margin: 3rem;
+        margin: 1rem 3rem;
         padding: 1.5rem;
         border-radius: 15px;
         width: 45rem;
@@ -379,3 +402,4 @@ letter-spacing: 3px;
       width: 100%;
   }
 }
+

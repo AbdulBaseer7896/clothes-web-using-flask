@@ -45,7 +45,7 @@ def log_page():
         print(log)
         data = order_details_from_db()
         for code in log:
-            if email == "abdulbasirqazi@gmail.com" and password == 12345:
+            if email == "Qazimoiz12345@Gmail.Com" and password == 123456789:
                 return render_template("admin.html" , data = data)
 
             if email == code[0] and password == code[1]:

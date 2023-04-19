@@ -11,12 +11,20 @@ Admin page
 
 <h1>The order list</h1> -->
 
+<br>
+<hr>
+<br>
+<h1 style="text-align: center;">This is order details.</h1>
+<br>
+<hr>
+<br>
 {% for order in data %}
 
 <div class="container">
-    <hr>
+
+
 <div class="border-bottom row" style="margin-bottom:16px;padding-bottom:8px;">
-    <div class="col-10">
+    <div class="col-6"  style="font-size: small;">
         <h4 
         style="color:rgb(120,120,120); margin-bottom:4px;">
     </h4>
@@ -53,10 +61,12 @@ Admin page
 
 </div>
 <div class="col-2 padding-right:16px">
-    <img style="width: 200px; height: 200px;" src="/static/{{order['image_path']}}" alt="image">
+    <img style="width: 180px; height: 200px;" src="/static/{{order['image_path']}}" alt="image">
 </div>
 
 </div>
+<br>
+<hr><br>
 </div>
 {% endfor %}
 {% endblock conatant %}

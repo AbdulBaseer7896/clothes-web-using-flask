@@ -7,10 +7,10 @@ Add Men
 
 
 {% block conatant %}
+<br>
+<h1 style="text-align: center;">This is Man page</h1>
 
-<h1>This Man database page</h1>
-
-<form class="container" action="{{ url_for('man_page') }}" method="post" enctype="multipart/form-data">
+<form class="container big-font" action="{{ url_for('man_page') }}" method="post" enctype="multipart/form-data">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name of Product</label>
     <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -26,46 +26,46 @@ Add Men
   <div class="input-group mb-3">
     <input type="file" name="avatar" class="form-control" id="inputGroupFile02">
   </div>
-
+<div style="text-align: center;">
   <input type="submit" class="btn btn-primary"></input>
+</div>
 </form>
 <br>
 
 <hr>
 
 <div class="container">
-  <h1>All The product related to man page</h1>
+  <h1 style="text-align: center;">All The product related to man page</h1>
   <div class="border-bottom row" style="margin-bottom:16px;padding-bottom:8px;">
     <hr>
     {% for data in data %}
-    <div class="col-10">
-      <h4 style="color:rgb(120,120,120); margin-bottom:4px;">
-      </h4>
-      <br>
-      <div>
-        <b>Product Name:</b> = {{data['item_name']}}
-      </div>
-      
-      <div>
-        <b>Product Price:</b> = <b>{{data['price']}} RS</b>
-      </div>
-      
-      <div>
-        <b>Product Description:</b> = {{data['descp']}}
-      </div>
-      <br>
-      <div>
-        <a href="{{ url_for('delete_product_man' , path = data.pic_name ) }}" type="submit"
-          class="btn btn-primary">Delete</a>
-      </div>
-
-    </div>
-    <div class="col-2 padding-right:16px">
-      <img style="width: 200px; height: 200px;" src="/static/{{data['pic_name']}}" alt="image">
+    <div class="col-6" style="font-size: medium;">
+      <h4 
+      style="color:rgb(120,120,120); margin-bottom:4px;">
+    </h4>
+    <br>
+    <div>
+      Product Name:{{data['item_name']}}
     </div>
 
-    <hr>
-    {% endfor %}
+    <div>
+      Product Price:<b>{{data['price']}} RS</b>
+    </div>
+    <br>
+    <div> 
+      <a href="{{ url_for('delete_product_man' , path = data.pic_name ) }}" type="submit" class="btn btn-primary">Delete</a>
+    </div>
+    
+    
+  </div>
+  <div class="col-2 padding-right:16px">
+    <img style="width: 180px; height: 200px;" src="/static/{{data['pic_name']}}" alt="image">
+  </div>
+  <br><br><br>
+  <hr>
+  <br>
+  <br><br>
+  {% endfor %}
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-.d-flex a:active, a:visited, a:link{
+ .d-flex a:active, a:visited, a:link{
     text-decoration: none;
     color: #212529;
 }
@@ -25,4 +25,38 @@
     background-color:  lightgray;
 background-blend-mode: overlay;
 
+}
+
+
+.btn-primary {
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background: #16a083;
+    display: inline-block;
+    padding: .7em 1.9em;
+    text-decoration: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-size: x-small;
+    font-weight: 500;
+}
+
+.btn-primary:hover{
+    background: #fff;
+    color: #16a083;
+    /* font-size: 1.1rem; */
+    border: 3px solid #16a083;
+}
+
+
+.big-font{
+    font-size: small;
+}
+
+.big-font {
+    width: 300px;
 }

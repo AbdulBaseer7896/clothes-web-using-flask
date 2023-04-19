@@ -24,24 +24,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
 </head>
 <header class="header">
-    <a href="#" id="logo">your <span>logo</span></a>
+    <a href="#" id="logo">Moiz<span> Fashion</span></a>
     <nav class="navbar">
         <a href="{{ url_for('hello_world') }}">Home</a>
-        <a href="{{ url_for('man_page') }}">Add Man</a>
-        <a href="{{ url_for('woman_page') }}">Add Woman</a>
-        <a href="#!">Add Child</a>
-        <a href="#">contact</a>
+        <a href="{{ url_for('woman_page') }}">Add Women</a>
+        <a href="{{ url_for('man_page') }}">Add Men</a>
+        <a href="{{ url_for('child') }}">Add Child</a> 
+        <a href="{{ url_for('log_page')}}">Log In</a>
+        <a href="{{ url_for('sign_page')}}">Sign Up</a>
     </nav>
-
-
-    <div>
-        <div>
-            <nav class="navbar">
-                <a href="{{ url_for('log_page')}}">Log In</a>
-                <a href="{{ url_for('sign_page')}}">Sign Up</a>
-            </nav>
-        </div>
-    </div>
     <div class="icons">
         <div class="fas fa-bars" id="menu-bar"></div>
         <div class="fas fa-shopping-cart" id="shop-cart"></div>
@@ -83,6 +74,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="/static/css/js/script.js"></script>
 </body>
 
 </html>

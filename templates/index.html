@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion website</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <!-- <link rel="stylesheet" href="/static/css/styles-2.css"> -->
     <link rel="stylesheet" href="/static/fontawesome-free-5.15.3-web/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
-    
+
 </head>
+
 <body>
 
     <header class="header container">
-        <a href="#" id="logo">your <span>logo</span></a>
+        <a href="#" id="logo">Moiz <span> Fashion</span></a>
         <nav class="navbar">
             <a href="{{ url_for('hello_world') }}">home</a>
             <a href="{{ url_for('woman') }}">women</a>
             <a href="{{ url_for('man') }}">men</a>
             <a href="{{ url_for('child') }}">Child</a>
             <a href="#">contact</a>
+            <a href="{{ url_for('log_page')}}">Log IN</a>
+            <a href="{{ url_for('sign_page')}}">Sign Up</a>
         </nav>
 
 
-<div>
-            <div>
-            <nav class="navbar">
-                <a href="{{ url_for('log_page')}}">Log IN</a>
-                <a href="{{ url_for('sign_page')}}">Sign Up</a>
-            </nav>
-        </div>
-</div>
         <div class="icons">
             <div class="fas fa-bars" id="menu-bar"></div>
             <div class="fas fa-shopping-cart" id="shop-cart"></div>
@@ -40,220 +37,178 @@
         <div class="search-box">
             <input type="search" placeholder="search here">
         </div>
-        <!-- shoping cart -->
-
-        <div class="shopping-cart">
-            <div class="shopping-box">
-                <i class="fas fa-times"></i>
-                <img src="/static/images/shirt1.png" alt="">
-                <div class="shop-content">
-                    <h3>online shopping</h3>
-                    <span class="quantity">1</span>
-                    <span class="multiply">*</span>
-                    <span class="multiply">$3.00</span>
-                </div>
-            </div>
-            <div class="shopping-box">
-                <i class="fas fa-times"></i>
-                <img src="/static/images/shirt1.png" alt="">
-                <div class="shop-content">
-                    <h3>online shopping</h3>
-                    <span class="quantity">1</span>
-                    <span class="multiply">*</span>
-                    <span class="multiply">$3.00</span>
-                </div>
-            </div>
-            <div class="shopping-box">
-                <i class="fas fa-times"></i>
-                <img src="/static/images/shirt1.png" alt="">
-                <div class="shop-content">
-                    <h3>online shopping</h3>
-                    <span class="quantity">1</span>
-                    <span class="multiply">*</span>
-                    <span class="multiply">$3.00</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- shoping cart ended  -->
-
-
 
     </header>
 
-<!-- main background image -->
-<div class="main-background">
-    <div class="left-back"></div>
+    <!-- main background image -->
+    <div class="main-background">
+        <div class="left-back"></div>
 
 
-    <div class="left-back">
+        <div class="left-back">
 
-        <div class="left-inner">
-            <div class="right-content">
-                <h1>summer <br> collection</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ad temporibus aliquid eos debitis alias repudiandae inventore voluptatem, non, dolores optio suscipit dicta porro itaque cum necessitatibus obcaecati aperiam possimus.</p>
-                <i class="fas fa-heart"></i>
-            </div>
-            <div class="right-content">
-                <div class="inner-main-content">
-                    <h1>Special offer</h1>
-                    <p>black sleeves</p>
-                    <span>$3</span>
-                    <span>$3</span>
-                    <a href="#" class="shopnow-btn">Shop now</a>
+            <div class="left-inner">
+                <div class="left-content">
+                    <h1>summer <br> collection</h1>
+                    <p></p>
+                    <i class="fas fa-heart"></i>
+                    <a class="btn-primary-for-main" href="{{ url_for('woman') }}">shop now</a>
+                    <i class="fas fa-heart"></i>
                 </div>
             </div>
-        </div>
-       
 
+
+
+        </div>
 
     </div>
 
-</div>
+    <!-- main background image ended-->
 
-<!-- main background image ended-->
+    <!-- gallery -->
 
-<!-- gallery -->
+    <div class="gallery">
 
-<div class="gallery">
+        <h1>our gallery</h1>
 
-<h1>our gallery</h1>
-
-    <div class="main-gallery">
-        <div class="inner-gallery">
-            <img src="/static/images/shoes.png" alt="">
-            <img src="/static/images/bag.png" alt="">
-        </div>
-        <div class="inner-gallery">
-            <div class="girl">
-                <img src="/static/images/girlsw.png" alt="">
+        <div class="main-gallery">
+            <div class="inner-gallery">
+                <img src="/static/images/shoes.png" alt="">
+                <img src="/static/images/bag.png" alt="">
             </div>
-            
+            <div class="inner-gallery">
+                <div class="girl">
+                    <img src="/static/images/girlsw.png" alt="">
+                </div>
+
+            </div>
+            <div class="inner-gallery">
+                <img src="/static/images/black men.png" alt="">
+                <img src="/static/images/glasses.png" alt="">
+            </div>
         </div>
-        <div class="inner-gallery">
-            <img src="/static/images/black men.png" alt="">
-            <img src="/static/images/glasses.png" alt="">
+
+    </div>
+
+
+    <!-- gallery ende-->
+    <!-- banner start -->
+    <div class="banner">
+        <div class="inner-banner">
+            <img src="/static/images/banner2.png" alt="">
+        </div>
+        <div class="inner-banner">
+            <h1>we offer brand new style</h1>
+            <p>We offer customized and expertly tailored Pakistani dresses, with a focus on quality and comfort. <br><br>
+                Our convenient online ordering and delivery options make it easy to find and purchase the perfect Pakistani dress for any occasion.</p>
+            <a href="{{ url_for('woman') }}" id="shope-now">shop now</a>
         </div>
     </div>
-    
-</div>
+    <!-- banner start ended -->
 
+    <!--  products type -->
 
-<!-- gallery ende-->
-<!-- banner start -->
-<div class="banner">
-    <div class="inner-banner">
-        <img src="/static/images/banner2.png" alt="">
-    </div>
-    <div class="inner-banner">
-        <h1>we offer brand new style</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias quam corporis, nihil, numquam ipsa aut distinctio magnam quidem totam ipsam itaque blanditiis omnis repudiandae ea neque exercitationem vel natus molestiae.</p>
-        <a href="#" id="shope-now">shop now</a>
-    </div>
-</div>
-<!-- banner start ended -->
+    <div class="products-type">
+        <h1>products type</h1>
+        <div class="main-product">
+            <div class="inner-product">
+                <img src="/static/images/boy.png" alt="">
+                <a href="{{ url_for('man') }}" id="shop-now">shop now</a>
+            </div>
 
-<!--  products type -->
+            <div class="inner-product">
+                <img src="/static/images/girl.png" alt="">
+                <a href="{{ url_for('woman') }}" id="shop-now">shop now</a>
+            </div>
 
-<div class="products-type">
-    <h1>products type</h1>
-<div class="main-product">
-    <div class="inner-product">
-        <img src="/static/images/boy.png" alt="">
-        <a href="#" id="shop-now">shop now</a>
-    </div>
-
-    <div class="inner-product">
-        <img src="/static/images/girl.png" alt="">
-        <a href="#" id="shop-now">shop now</a>
-    </div>
-
-    <div class="inner-product">
-        <img src="/static/images/baby.png" alt="">
-        <a href="#" id="shop-now">shop now</a>
-    </div>
-</div>
-
-
-
-</div>
-
-
-<!--products type ended -->
-
-<!-- featured products -->
-
-<div class="products-type">
-    <h1>featured products</h1>
-
-
-
-
-<div class="featured-product slides">
-    <div class="featured-inner-product">
-        <img src="/static/images/feature.png" alt="">
-        <a href="#" id="shop-now">shop now</a>
-    </div>
-
-    <div class="featured-inner-product">
-        <img src="/static/images/feature2.png" alt="">
-        <a href="#" id="shop-now">shop now</a>
-    </div>
-
-    <div class="featured-inner-product">
-        <img src="/static/images/feature3.png" alt="">
-        <a href="#" id="shop-now">shop now</a>
-    </div>
-
-    <div class="featured-inner-product">
-        <img src="/static/images/feature4.png" alt="">
-        <a href="#" id="shop-now">shop now</a>
-    </div>
-
-    <div class="featured-inner-product">
-        <img src="/static/images/feature2.png" alt="">
-        <a href="#" id="shop-now">shop now</a>
-    </div>
-
-    <div class="featured-inner-product">
-        <img src="/static/images/feature3.png" alt="">
-        <a href="#" id="shop-now">shop now</a>
-    </div>
-</div>
-
-
-
-</div>
-
-
-
-<!-- featured products ended -->
-
-<!-- our blogs and news -->
-<div class="container">
-<div class="our-blog">
-    <h1>our blogs and news</h1>
-
-    <div class="main-blog">
-
-        <div class="">
-            <img src="/static/images/blog1.png" alt="">
-            <p>This is secret about fashion people</p>
-        </div>
-        <div class="">
-            <img src="/static/images/blog2.png" alt="">
-            <p>This is secret about fashion people</p>
+            <div class="inner-product">
+                <img src="/static/images/baby.png" alt="">
+                <a href="{{ url_for('child') }}" id="shop-now">shop now</a>
+            </div>
         </div>
 
 
+
     </div>
-</div>
-</div>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--products type ended -->
+
+    <!-- featured products -->
+
+    <div class="products-type">
+        <h1>featured products</h1>
+
+
+
+
+        <div class="featured-product slides">
+            <div class="featured-inner-product">
+                <img src="/static/images/feature.png" alt="">
+                <a href="{{ url_for('man') }}" id="shop-now">shop now</a>
+            </div>
+
+            <div class="featured-inner-product">
+                <img src="/static/images/feature2.png" alt="">
+                <a href="{{ url_for('man') }}" id="shop-now">shop now</a>
+            </div>
+
+            <div class="featured-inner-product">
+                <img src="/static/images/feature3.png" alt="">
+                <a href="{{ url_for('woman') }}" id="shop-now">shop now</a>
+            </div>
+
+            <div class="featured-inner-product">
+                <img src="/static/images/feature4.png" alt="">
+                <a href="{{ url_for('woman') }}" id="shop-now">shop now</a>
+            </div>
+
+            <div class="featured-inner-product">
+                <img src="/static/images/feature2.png" alt="">
+                <a href="{{ url_for('woman') }}" id="shop-now">shop now</a>
+            </div>
+
+            <div class="featured-inner-product">
+                <img src="/static/images/feature3.png" alt="">
+                <a href="{{ url_for('woman') }}" id="shop-now">shop now</a>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <!-- featured products ended -->
+
+    <!-- our blogs and news -->
+    <div class="container">
+        <div class="our-blog">
+            <h1>our blogs and news</h1>
+
+            <div class="main-blog">
+
+                <div class="">
+                    <img src="/static/images/blog1.png" alt="">
+                    <!-- <p>This is secret about fashion people</p> -->
+                </div>
+                <div class="">
+                    <img src="/static/images/blog2.png" alt="">
+                    <!-- <p>This is secret about fashion people</p> -->
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="/static/css/js/script.js"></script>
 </body>
+
 </html>

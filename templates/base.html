@@ -24,24 +24,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
 </head>
 <header class="header">
-    <a href="#" id="logo">your <span>logo</span></a>
+    <a href="#" id="logo">Moiz<span> Fashion</span></a>
     <nav class="navbar">
         <a href="{{ url_for('hello_world') }}">home</a>
         <a href="{{ url_for('woman') }}">women</a>
         <a href="{{ url_for('man') }}">men</a>
         <a href="{{ url_for('child') }}">Child</a>
         <a href="#">contact</a>
+        <a href="{{ url_for('log_page')}}">Log In</a>
+        <a href="{{ url_for('sign_page')}}">Sign Up</a>
     </nav>
-
-
-    <div>
-        <div>
-            <nav class="navbar">
-                <a href="{{ url_for('log_page')}}">Log In</a>
-                <a href="{{ url_for('sign_page')}}">Sign Up</a>
-            </nav>
-        </div>
-    </div>
     <div class="icons">
         <div class="fas fa-bars" id="menu-bar"></div>
         <div class="fas fa-shopping-cart" id="shop-cart"></div>
