@@ -193,6 +193,10 @@ def delete_product_man():
     datas = add_man_data_from_db()
     return render_template('add_man.html' ,data = datas)
 
+@app.route('/child_page' )
+def child():
+    return render_template('child.html')
+
 
 
 if __name__ == '__main__':

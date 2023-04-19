@@ -7,3 +7,22 @@
     text-decoration: none;
     color: white;
 }
+
+.fix_image{
+    width: 100%;
+    height: 100%;
+}
+
+.basic_page_img{
+    background-image: url(/static/images/basic_header-2.jpg);
+    background-size: cover;
+    width: 100%;
+    margin: auto;
+    object-fit: cover;
+    object-position: bottom;
+    object-position: bottom;
+    height: 100%;
+    background-color:  lightgray;
+background-blend-mode: overlay;
+
+}

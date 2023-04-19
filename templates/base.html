@@ -17,44 +17,53 @@
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="../static/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet"href="../static/css/styles.css" />
     <link rel="stylesheet" href="../static/css/styles-2.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
 </head>
+<header class="header">
+    <a href="#" id="logo">your <span>logo</span></a>
+    <nav class="navbar">
+        <a href="{{ url_for('hello_world') }}">home</a>
+        <a href="{{ url_for('woman') }}">women</a>
+        <a href="{{ url_for('man') }}">men</a>
+        <a href="{{ url_for('child') }}">Child</a>
+        <a href="#">contact</a>
+    </nav>
+
+
+    <div>
+        <div>
+            <nav class="navbar">
+                <a href="{{ url_for('log_page')}}">Log In</a>
+                <a href="{{ url_for('sign_page')}}">Sign Up</a>
+            </nav>
+        </div>
+    </div>
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-bar"></div>
+        <div class="fas fa-shopping-cart" id="shop-cart"></div>
+        <div class="fas fa-search" id="search-bar"></div>
+    </div>
+
+</header>
+
 
 <body>
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#!">QAZI</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('hello_world') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('log_page') }}">About</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('man') }}">Man</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('woman') }}">Woman</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#!">child</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#!">Other</a></li>
-                </ul>
-                <form class="d-flex">
-                    <button class="btn btn-outline-dark me-4" type="submit">
-                        <a href="{{ url_for('log_page')}}">Log In</a>
-                    </button>
-                    <button class="btn btn-outline-dark n ml-3" type="submit">
-                       <a href="{{ url_for('sign_page')}}">Sign Up</a> 
-                    </button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    <!-- Header-->
-    <header class="bg-dark py-5">
+<br><br><br><br><br><br>
+
+
+<header class="bg-dark py-5 basic_page_img">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Shop in style</h1>
-                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                <br><br><br><br>
+                <h1 class="display-4 fw-bolder">Shoping in style</h1>
+                <p class="lead fw-normal text-white-60 mb-xxl-4">Fashion that fits your style</p>
+
+                <h1 class="display-4 fw-bolder">Discover your new favorite outfit</h1>
+                <br><br><br>
             </div>
         </div>
     </header>
@@ -75,6 +84,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="/static/css/js/script.js"></script>
 </body>
 
 </html>
